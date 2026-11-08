@@ -86,6 +86,37 @@ function SqliteArchitectureReview() {
         </p>
       </div>
 
+      <article className="panel deshifrator-overview" id="deshifrator-program-description">
+        <div className="panel-heading">
+          <div><p className="eyebrow">DESHIFRATOR · PROGRAM DESCRIPTION</p><h3>АРМ по оформлению документов «Дешифратор»</h3></div>
+        </div>
+        <p>
+          «Дешифратор» is a historical desktop application suite documented from the
+          project descriptions and selected source-code materials currently available.
+          This portfolio section presents the program description and the technical
+          evidence that can be published and verified.
+        </p>
+        <p>
+          The complete dependency structure can no longer be examined because the
+          original technical documentation containing the full dependency information
+          is classified and unavailable. Only confirmed information and relationships
+          are published; missing dependencies are not inferred.
+        </p>
+        <p className="sqlite-diagram-note">
+          These materials are a partial technical representation. The absence of a
+          component or relationship in the published diagrams does not prove that it
+          is absent from the production application.
+        </p>
+        <div className="featured-project-tags">
+          <span>Desktop Application</span><span>C# / WPF</span><span>SQLite</span>
+          <span>Historical System</span><span>Partial Documentation</span>
+        </div>
+        <div className="featured-project-actions">
+          <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs-public/" target="_blank" rel="noreferrer">Published Deshifrator documentation ↗</a>
+          <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs-public" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+        </div>
+      </article>
+
       <article className="panel sqlite-diagram-card" id="sqlite-component-architecture">
         <div className="panel-heading">
           <div><p className="eyebrow">01 · CANONICAL COMPONENT VIEW</p><h3>SQLite Data Access Architecture</h3></div>
