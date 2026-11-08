@@ -18,7 +18,7 @@
 ## Избранные направления
 
 - [ППО «Территория» и связанные компоненты](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public) — единый документационный проект, объединяющий материалы по системе «Территория», АРМ «Дискриптор», «Дешифратор» и связанным программным компонентам. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified-public/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public/blob/main/materials/architecture/system-context-and-scope.en.md).
-- [Документация «Дешифратора»](https://github.com/ekatmoz88-alt/deshifrator-docs-public) — архитектура, обмен данными, анализ рисков и C# / SQLite data-access layer.
+- [АРМ по оформлению документов «Дешифратор» — опубликованная документация](https://ekatmoz88-alt.github.io/deshifrator-docs-public/) · [GitHub-репозиторий](https://github.com/ekatmoz88-alt/deshifrator-docs-public) — описание исторического настольного приложения, архитектура, обмен данными, анализ рисков и C# / SQLite data-access layer. Диаграммы частичные: исходная документация зависимостей засекречена и недоступна, поэтому публикуются только подтверждённые связи.
 - API documentation и OpenAPI.
 - Архитектура корпоративных систем и документация связанных программных компонентов.
 - C++ UI component documentation.
