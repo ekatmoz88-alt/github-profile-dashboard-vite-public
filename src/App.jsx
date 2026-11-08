@@ -1,21 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
 const USERNAME = 'ekatmoz88-alt';
-const API = 'https://api.github.com';
-
-async function githubGet(path, signal) {
-  const response = await fetch(`${API}${path}`, {
-    headers: { Accept: 'application/vnd.github+json' },
-    signal,
-  });
-  if (!response.ok) {
-    const message = response.status === 403
-      ? 'GitHub API rate limit reached. Please try again later.'
-      : `GitHub API request failed (${response.status}).`;
-    throw new Error(message);
-  }
-  return response.json();
-}
 
 function formatNumber(value = 0) {
   return new Intl.NumberFormat('en', { notation: value > 9999 ? 'compact' : 'standard' }).format(value);
@@ -33,7 +18,7 @@ function timeAgo(date) {
 function eventDescription(event) {
   const repo = event.repo?.name?.replace(`${USERNAME}/`, '') || 'a repository';
   switch (event.type) {
-    case 'PushEvent': return `Pushed ${event.payload?.commits?.length || 1} commit(s) to ${repo}`;
+    case 'PushEvent': return `Pushed ${event.payload?.commits_count || 1} commit(s) to ${repo}`;
     case 'CreateEvent': return `Created ${event.payload?.ref_type || 'a resource'} in ${repo}`;
     case 'PullRequestEvent': return `${event.payload?.action || 'Updated'} a pull request in ${repo}`;
     case 'IssuesEvent': return `${event.payload?.action || 'Updated'} an issue in ${repo}`;
@@ -229,16 +214,24 @@ export default function App() {
     setLoading(true);
     setError('');
     try {
-      const [userData, repoData, eventData] = await Promise.all([
-        githubGet(`/users/${USERNAME}`, signal),
-        githubGet(`/users/${USERNAME}/repos?sort=updated&per_page=100&type=owner`, signal),
-        githubGet(`/users/${USERNAME}/events/public?per_page=30`, signal),
-      ]);
-      setProfile(userData);
-      setRepositories(repoData);
-      setEvents(eventData);
+      const response = await fetch(
+        `${import.meta.env.BASE_URL}data/github.json`,
+        { signal, cache: 'no-store' }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Dashboard data unavailable (${response.status}).`);
+      }
+
+      const data = await response.json();
+
+      setProfile(data.profile);
+      setRepositories(data.repositories);
+      setEvents(data.events);
     } catch (err) {
-      if (err.name !== 'AbortError') setError(err.message || 'Unable to load GitHub data.');
+      if (err.name !== 'AbortError') {
+        setError(err.message || 'Unable to load dashboard data.');
+      }
     } finally {
       if (!signal.aborted) setLoading(false);
     }
@@ -282,7 +275,7 @@ export default function App() {
           <span className="brand-mark">⌘</span> GitHub Insights
         </a>
         <div className="topbar-right">
-          <span className="live-dot" /> Live public data
+          <span className="live-dot" /> Published data snapshot
           <button className="refresh-button" onClick={() => {
             const controller = new AbortController();
             loadDashboard(controller.signal);
@@ -539,7 +532,7 @@ export default function App() {
         )}
         <footer className="footer">
           <span>Data provided by the GitHub REST API</span>
-          <span>Public data · Refresh to update</span>
+          <span>Public snapshot · Refresh to reload</span>
         </footer>
       </main>
     </div>

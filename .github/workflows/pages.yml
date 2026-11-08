@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - "scripts/**"
       - "docs/**"
       - "index.html"
       - "package.json"
@@ -32,6 +33,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Fetch public GitHub data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/fetch-github-data.mjs
       - run: npm run build
       - name: Include standalone review pages
         run: |
