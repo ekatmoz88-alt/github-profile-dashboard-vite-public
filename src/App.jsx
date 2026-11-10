@@ -91,10 +91,10 @@ function SqliteArchitectureReview() {
           <div><p className="eyebrow">DESHIFRATOR · PROGRAM DESCRIPTION</p><h3>АРМ по оформлению документов «Дешифратор»</h3></div>
         </div>
         <p>
-          «Дешифратор» is a historical desktop application suite documented from the
-          project descriptions and selected source-code materials currently available.
-          This portfolio section presents the program description and the technical
-          evidence that can be published and verified.
+          «Дешифратор» is the official name of one historical desktop application project.
+          The earlier name «Дискриптор» / “Descriptor” in the companion specification
+          repository refers to this same project, not a separate product. This portfolio
+          section presents selected source-code evidence alongside the project-level specification.
         </p>
         <p>
           The complete dependency structure can no longer be examined because the
@@ -113,7 +113,8 @@ function SqliteArchitectureReview() {
         </div>
         <div className="featured-project-actions">
           <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs-public/" target="_blank" rel="noreferrer">Published Deshifrator documentation ↗</a>
-          <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs-public" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+          <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs-public" target="_blank" rel="noreferrer">Source-based documentation ↗</a>
+          <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Project specification (legacy repository name) ↗</a>
         </div>
       </article>
 
