@@ -13,12 +13,12 @@
 
 - **6 избранных карточек** — отобранные кейсы технического письма.
 - Динамический индекс публичных репозиториев загружается через GitHub API.
-- Материалы по ППО «Территория» и связанным компонентам представлены как единый документационный проект.
+- АРМ «Дешифратор» представлен как один проект; проектное описание и исходниковый анализ опубликованы в двух взаимодополняющих репозиториях.
 
 ## Избранные направления
 
-- [ППО «Территория» и связанные компоненты](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public) — единый документационный проект, объединяющий материалы по системе «Территория», АРМ «Дискриптор», «Дешифратор» и связанным программным компонентам. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified-public/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public/blob/main/materials/architecture/system-context-and-scope.en.md).
-- [АРМ по оформлению документов «Дешифратор» — опубликованная документация](https://ekatmoz88-alt.github.io/deshifrator-docs-public/) · [GitHub-репозиторий](https://github.com/ekatmoz88-alt/deshifrator-docs-public) — описание исторического настольного приложения, архитектура, обмен данными, анализ рисков и C# / SQLite data-access layer. Диаграммы частичные: исходная документация зависимостей засекречена и недоступна, поэтому публикуются только подтверждённые связи.
+- [ППО «Территория» — отдельный документационный трек](https://github.com/ekatmoz88-alt/territory-descriptor-unified-public) — не следует отождествлять его с АРМ «Дешифратор». В историческом проектном описании «Дешифратора» ППО «Территория» упоминается как внешний информационный контекст ПОШ ВБД.
+- [АРМ «Дешифратор» — опубликованная документация](https://ekatmoz88-alt.github.io/deshifrator-docs-public/) · [исходниковый анализ](https://github.com/ekatmoz88-alt/deshifrator-docs-public) · [проектное описание](https://github.com/ekatmoz88-alt/descriptor-arm-spec) — один исторический программный проект. «Дискриптор» — ранее использовавшееся название того же проекта, а не отдельное ПО. Первый репозиторий содержит анализ выбранных C#-фрагментов, второй — проектное описание ПОСС, ПОМС и ПОШ ВБД. Требования и подтверждённая реализация разделяются.
 - API documentation и OpenAPI.
 - Архитектура корпоративных систем и документация связанных программных компонентов.
 - C++ UI component documentation.
